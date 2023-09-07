@@ -1,7 +1,8 @@
 plugins {
-    kotlin("multiplatform")
-    id("com.android.library")
-    id("org.jetbrains.compose")
+    alias(libs.plugins.com.android.library)
+    alias(libs.plugins.org.jetbrains.compose)
+    alias(libs.plugins.org.jetbrains.kotlin.multiplatform)
+    alias(libs.plugins.org.jetbrains.kotlin.plugin.serialization)
 }
 
 kotlin {
@@ -26,13 +27,20 @@ kotlin {
                 implementation(compose.material)
                 @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
                 implementation(compose.components.resources)
+                implementation(libs.ktor.client.core)
+                implementation(libs.ktor.client.serialization)
+                implementation(libs.ktor.serialization.json)
+                implementation(libs.org.jetbrains.kotlinx.datetime)
+                // TODO implementation(libs.coil.compose) Use when KMP is supported https://github.com/coil-kt/coil/issues/842#issuecomment-1622516075
+                implementation(libs.arrow.core)
             }
         }
         val androidMain by getting {
             dependencies {
-                api("androidx.activity:activity-compose:1.7.2")
-                api("androidx.appcompat:appcompat:1.6.1")
-                api("androidx.core:core-ktx:1.10.1")
+                api(libs.androidx.activity.compose)
+                api(libs.androidx.appcompat)
+                api(libs.androidx.core.ktx)
+                api(libs.ktor.client.android)
             }
         }
         val iosX64Main by getting
@@ -43,12 +51,16 @@ kotlin {
             iosX64Main.dependsOn(this)
             iosArm64Main.dependsOn(this)
             iosSimulatorArm64Main.dependsOn(this)
+
+            dependencies {
+                implementation(libs.ktor.client.ios)
+            }
         }
     }
 }
 
 android {
-    compileSdk = (findProperty("android.compileSdk") as String).toInt()
+    compileSdk = libs.versions.android.compile.sdk.get().toInt()
     namespace = "com.myapplication.common"
 
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
@@ -56,13 +68,15 @@ android {
     sourceSets["main"].resources.srcDirs("src/commonMain/resources")
 
     defaultConfig {
-        minSdk = (findProperty("android.minSdk") as String).toInt()
+        minSdk = libs.versions.android.min.sdk.get().toInt()
     }
+
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.toVersion(libs.versions.java.get())
+        targetCompatibility = JavaVersion.toVersion(libs.versions.java.get())
     }
+
     kotlin {
-        jvmToolchain(11)
+        jvmToolchain(libs.versions.java.get().toInt())
     }
 }

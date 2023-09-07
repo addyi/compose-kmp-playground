@@ -1,7 +1,8 @@
 plugins {
-    kotlin("multiplatform")
-    id("com.android.application")
-    id("org.jetbrains.compose")
+    alias(libs.plugins.com.android.application)
+    alias(libs.plugins.org.jetbrains.compose)
+    alias(libs.plugins.org.jetbrains.kotlin.multiplatform)
+    alias(libs.plugins.org.jetbrains.kotlin.plugin.serialization)
 }
 
 kotlin {
@@ -16,23 +17,25 @@ kotlin {
 }
 
 android {
-    compileSdk = (findProperty("android.compileSdk") as String).toInt()
+    compileSdk = libs.versions.android.compile.sdk.get().toInt()
     namespace = "com.myapplication"
 
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
 
     defaultConfig {
         applicationId = "com.myapplication.MyApplication"
-        minSdk = (findProperty("android.minSdk") as String).toInt()
-        targetSdk = (findProperty("android.targetSdk") as String).toInt()
+        minSdk = libs.versions.android.min.sdk.get().toInt()
+        targetSdk = libs.versions.android.target.sdk.get().toInt()
         versionCode = 1
         versionName = "1.0"
     }
+
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.toVersion(libs.versions.java.get())
+        targetCompatibility = JavaVersion.toVersion(libs.versions.java.get())
     }
+
     kotlin {
-        jvmToolchain(11)
+        jvmToolchain(libs.versions.java.get().toInt())
     }
 }
