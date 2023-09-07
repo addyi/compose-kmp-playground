@@ -1,12 +1,12 @@
 [versions]
 
-android-target-sdk = "34"
-android-compile-sdk = "34"
-android-min-sdk = "24"
+android-sdk-target = "34"
+android-sdk-compile = "34"
+android-sdk-min = "24"
 
 kotlin = "1.9.10"
-java = "11"
-agp = "8.1.0"
+java-jvm = "11"
+android-gradle-plugin = "8.1.0"
 
 ktor = "2.1.3"
 
@@ -35,8 +35,8 @@ plugin-version-management-version-catalog = "nl.littlerobots.vcu:plugin:0.8.1"
 
 [plugins]
 
-com-android-application = { id = "com.android.application", version.ref = "agp" }
-com-android-library = { id = "com.android.library", version.ref = "agp" }
+com-android-application = { id = "com.android.application", version.ref = "android-gradle-plugin" }
+com-android-library = { id = "com.android.library", version.ref = "android-gradle-plugin" }
 org-jetbrains-compose = { id = "org.jetbrains.compose", version = "1.5.1" }
 org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 org-jetbrains-kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }

@@ -60,7 +60,7 @@ kotlin {
 }
 
 android {
-    compileSdk = libs.versions.android.compile.sdk.get().toInt()
+    compileSdk = libs.versions.android.sdk.compile.get().toInt()
     namespace = "com.myapplication.common"
 
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
@@ -68,15 +68,15 @@ android {
     sourceSets["main"].resources.srcDirs("src/commonMain/resources")
 
     defaultConfig {
-        minSdk = libs.versions.android.min.sdk.get().toInt()
+        minSdk = libs.versions.android.sdk.min.get().toInt()
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.toVersion(libs.versions.java.get())
-        targetCompatibility = JavaVersion.toVersion(libs.versions.java.get())
+        sourceCompatibility = JavaVersion.toVersion(libs.versions.java.jvm.get())
+        targetCompatibility = JavaVersion.toVersion(libs.versions.java.jvm.get())
     }
 
     kotlin {
-        jvmToolchain(libs.versions.java.get().toInt())
+        jvmToolchain(libs.versions.java.jvm.get().toInt())
     }
 }
