@@ -41,6 +41,8 @@ coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil-compose
 arrow-core = { module = "io.arrow-kt:arrow-core", version.ref = "arrow" }
 arrow-core-serialization = { module = "io.arrow-kt:arrow-core-serialization", version.ref = "arrow" }
 arrow-fx-coroutines = { module = "io.arrow-kt:arrow-fx-coroutines", version.ref = "arrow" }
+plugin-version-management-ben-manes = "com.github.ben-manes:gradle-versions-plugin:0.48.0"
+plugin-version-management-version-catalog = "nl.littlerobots.vcu:plugin:0.8.1"
 
 [plugins]
 

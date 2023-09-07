@@ -8,6 +8,6 @@
     - I noticed that there is no image loading library for compose multiplatform.
     - Coil is the biggest contender yet. They've gotten a grand to implement coil for
       KMP: https://kotlinfoundation.org/news/grants-program-winners-23/
-5. ...
+5. Add custom dependency version management gradle plugin
 
 [compose-multiplatform-ios-android-template]: https://github.com/JetBrains/compose-multiplatform-ios-android-template
