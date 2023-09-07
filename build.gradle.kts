@@ -10,21 +10,26 @@ plugins {
 }
 
 detekt {
-    // Documentation: https://detekt.dev/gradle.html#options-for-detekt-configuration-closure
+    // Documentation: https://detekt.dev/docs/gettingstarted/gradle/#kotlin-dsl-3
 
-    source = files("androidApp", "shared") // The directories where detekt looks for source files.
+    source.setFrom(".", "androidApp", "shared") // The directories where detekt looks for source files.
 
-    config = files("${rootProject.rootDir}/detekt.yml")
+    buildUponDefaultConfig = true // Applies the config files on top of detekt's default config file. `false` by default.
+    config.setFrom("${rootProject.rootDir}/detekt.yml")
 
     parallel = true // Builds the AST in parallel.
 
-//    ignoredBuildTypes = listOf("release") // Don't create tasks for the specified build types (e.g. "release")
-//    ignoredFlavors = listOf("production", "staging") // Don't create tasks for the specified build flavor (e.g. "production")
-//    ignoredVariants = listOf("productionRelease") // Don't create tasks for the specified build variants (e.g. "productionRelease")
+    baseline = file("${rootProject.rootDir}/detekt-baseline.xml") // TODO get rid of baseline as fast as possible
 
     basePath = projectDir.absolutePath
 
     allRules = true // Turns on all the rules. Default: false
+}
+
+dependencies {
+    detektPlugins(libs.detekt.rules.compose.kode)
+    detektPlugins(libs.detekt.rules.compose.nlopez)
+    detektPlugins(libs.detekt.rules.formatting.ktlint)
 }
 
 tasks.register("clean", Delete::class) {

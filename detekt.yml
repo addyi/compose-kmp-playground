@@ -8,42 +8,42 @@ output-reports:
 processors:
   active: true
 
-#compose:
-#  # Rules from https://github.com/appKODE/detekt-rules-compose
-#  ComposableEventParameterNaming: { active: true }
-#  ComposableParametersOrdering: { active: true }
-#  ComposeFunctionName: { active: true }
-#  MissingModifierDefaultValue: { active: true }
-#  ModifierDefaultValue: { active: true }
-#  ModifierHeightWithText: { active: true }
-#  ModifierParameterPosition: { active: true }
-#  PublicComposablePreview: { active: true }
-#  ReusedModifierInstance: { active: true }
-#  TopLevelComposableFunctions: { active: true }
-#  UnnecessaryEventHandlerParameter: { active: true }
-#
-#Compose:
-#  # Rules from https://mrmans0n.github.io/compose-rules/
-#  CompositionLocalAllowlist: { active: false }
-#  # You can optionally define a list of CompositionLocals that are allowed here
-#  # allowedCompositionLocals: LocalSomething,LocalSomethingElse
-#  ContentEmitterReturningValues: { active: true }
-#  ModifierComposable: { active: true }
-#  ModifierMissing:
-#    active: true
-#    checkModifiersForVisibility: only_public # Possible values are: `only_public`, `public_and_internal` and `all`
-#  ModifierReused: { active: true }
-#  ModifierWithoutDefault: { active: true }
-#  MultipleEmitters: { active: true }
-#  MutableParams: { active: true }
-#  ComposableNaming: { active: true }
-#  ComposableParamOrder: { active: true }
-#  PreviewNaming: { active: true }
-#  PreviewPublic: { active: true }
-#  RememberMissing: { active: true }
-#  UnstableCollections: { active: true }
-#  ViewModelForwarding: { active: true }
-#  ViewModelInjection: { active: true }
+compose:
+  # Rules from https://github.com/appKODE/detekt-rules-compose
+  ComposableEventParameterNaming: { active: true }
+  ComposableParametersOrdering: { active: true }
+  ComposeFunctionName: { active: true }
+  MissingModifierDefaultValue: { active: true }
+  ModifierDefaultValue: { active: true }
+  ModifierHeightWithText: { active: true }
+  ModifierParameterPosition: { active: true }
+  PublicComposablePreview: { active: true }
+  ReusedModifierInstance: { active: true }
+  TopLevelComposableFunctions: { active: true }
+  UnnecessaryEventHandlerParameter: { active: true }
+
+Compose:
+  # Rules from https://mrmans0n.github.io/compose-rules/
+  CompositionLocalAllowlist: { active: false }
+  # You can optionally define a list of CompositionLocals that are allowed here
+  # allowedCompositionLocals: LocalSomething,LocalSomethingElse
+  ContentEmitterReturningValues: { active: true }
+  ModifierComposable: { active: true }
+  ModifierMissing:
+    active: true
+    checkModifiersForVisibility: only_public # Possible values are: `only_public`, `public_and_internal` and `all`
+  ModifierReused: { active: true }
+  ModifierWithoutDefault: { active: true }
+  MultipleEmitters: { active: true }
+  MutableParams: { active: true }
+  ComposableNaming: { active: true }
+  ComposableParamOrder: { active: true }
+  PreviewNaming: { active: true }
+  PreviewPublic: { active: true }
+  RememberMissing: { active: true }
+  UnstableCollections: { active: true }
+  ViewModelForwarding: { active: true }
+  ViewModelInjection: { active: true }
 
 comments:
   active: true
@@ -93,12 +93,8 @@ exceptions:
   NotImplementedDeclaration:
     active: true
     excludes: [ '**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/jsTest/**', '**/iosTest/**' ]
-  ObjectExtendsThrowable: { active: false } # <- Postponed: Requires Type Resolution
   PrintStackTrace: { active: true }
   RethrowCaughtException: { active: true }
-  ReturnFromFinally:
-    active: false # <- Postponed: Requires Type Resolution
-    ignoreLabeled: false
   SwallowedException: { active: true }
   ThrowingExceptionFromFinally: { active: true }
   ThrowingExceptionInMain: { active: true }
@@ -107,14 +103,10 @@ exceptions:
   TooGenericExceptionCaught: { active: false }
   TooGenericExceptionThrown: { active: true }
 
-# formatting: { active: false } # ktLint rule set
+formatting: { active: true }
 
 naming:
   active: true
-  BooleanPropertyNaming: # <- Postponed: Requires Type Resolution
-    active: false
-    allowedPattern: '^(is|has|are)'
-    ignoreOverridden: true
   ClassNaming: { active: true }
   ConstructorParameterNaming: { active: true }
   EnumNaming:
@@ -133,10 +125,6 @@ naming:
   LambdaParameterNaming: { active: true }
   MatchingDeclarationName: { active: true }
   MemberNameEqualsClassName: { active: true }
-  NoNameShadowing: # <- Postponed: Requires Type Resolution
-    active: false
-  NonBooleanPropertyPrefixedWithIs: # <- Postponed: Requires Type Resolution
-    active: false
   ObjectPropertyNaming:
     active: true
     constantPattern: '[A-Z][_A-Z0-9]*'
@@ -160,114 +148,76 @@ naming:
 performance:
   active: true
   ArrayPrimitive: { active: true }
-  CouldBeSequence: { active: false } # <- Postponed: Requires Type Resolution
   ForEachOnRange: { active: true }
   SpreadOperator: { active: false }
   UnnecessaryTemporaryInstantiation: { active: true }
 
 potential-bugs:
   active: true
-  AvoidReferentialEquality: { active: false } # <- Postponed: Requires Type Resolution
   CastToNullableType: { active: false }
   Deprecation: { active: false }
-  DontDowncastCollectionTypes: { active: false } # <- Postponed: Requires Type Resolution
-  DoubleMutabilityForCollection: { active: false } # <- Postponed: Requires Type Resolution
-  ElseCaseInsteadOfExhaustiveWhen: { active: false } # <- Postponed: Requires Type Resolution
   EqualsAlwaysReturnsTrueOrFalse: { active: true }
   EqualsWithHashCodeExist: { active: true }
-  ExitOutsideMain: { active: false } # <- Postponed: Requires Type Resolution
   ExplicitGarbageCollectionCall: { active: true }
-  HasPlatformType: { active: false } # <- Postponed: Requires Type Resolution
-  IgnoredReturnValue: { active: false } # <- Postponed: Requires Type Resolution
-  ImplicitDefaultLocale: { active: false } # <- Postponed: Discuss
-  ImplicitUnitReturnType: { active: false } # <- Postponed: Requires Type Resolution
+  ImplicitDefaultLocale: { active: true }
   InvalidRange: { active: true }
   IteratorHasNextCallsNextMethod: { active: true }
   IteratorNotThrowingNoSuchElementException: { active: true }
   LateinitUsage: { active: false }
   MapGetWithNotNullAssertionOperator: { active: true }
   MissingPackageDeclaration: { active: true }
-  NullCheckOnMutableProperty: { active: false } # <- Postponed: Requires Type Resolution
-  NullableToStringCall: { active: false } # <- Postponed: Requires Type Resolution
   UnconditionalJumpStatementInLoop: { active: true }
-  UnnecessaryNotNullOperator: { active: false } # <- Postponed: Requires Type Resolution
-  UnnecessarySafeCall: { active: false } # <- Postponed: Requires Type Resolution
-  UnreachableCatchBlock: { active: false } # <- Postponed: Requires Type Resolution
-  UnreachableCode: { active: false } # <- Postponed: Requires Type Resolution
-  UnsafeCallOnNullableType: { active: false } # <- Postponed: Requires Type Resolution
-  UnsafeCast: { active: false } # <- Postponed: Requires Type Resolution
-  UnusedUnaryOperator: { active: false } # <- Postponed: Requires Type Resolution
   UselessPostfixExpression: { active: true }
   WrongEqualsTypeParameter: { active: true }
 
 style:
   active: true
-  CanBeNonNullable: { active: false } # <- Postponed: Requires Type Resolution
   CascadingCallWrapping: { active: true }
   ClassOrdering: { active: true }
   CollapsibleIfStatements: { active: true }
-  DataClassContainsFunctions: { active: false } # <- Postponed: Discussion worthy
+  DataClassContainsFunctions: { active: true }
   DataClassShouldBeImmutable: { active: true }
   DestructuringDeclarationWithTooManyEntries: { active: true }
   EqualsNullCall: { active: true }
   EqualsOnSignatureLine: { active: true }
-  ExplicitCollectionElementAccessMethod: { active: false } # <- Postponed: Requires Type Resolution
   ExplicitItLambdaParameter: { active: true }
   ExpressionBodySyntax: # <- TODO: Discuss in separate PR
     active: false
     includeLineWrapping: false
   ForbiddenComment:
     active: true
-    values:
+    comments:
       - 'FIXME'
       - 'STOPSHIP'
-      # - 'TODO' # <- TODO Enable in follow up PR
     allowedPatterns: ''
-    customMessage: ''
-    excludes: [ '**/de/stocard/pay/**' ] # TODO remove after pay is decommissioned
   ForbiddenImport:
     active: true
-    imports: [
-      'java.text.SimpleDateFormat' # Old Java date APIs used: Use Java 8 dates instead. See DateTimeExt class for more info.
-    ]
-  ForbiddenMethodCall: # <- Postponed: Requires Type Resolution
-    active: false
-    methods:
-      - 'kotlin.io.print'
-      - 'kotlin.io.println'
+    imports: [ ]
   ForbiddenSuppress:
     active: true
     rules: [ ]
-  ForbiddenVoid: # <- Postponed: Requires Type Resolution
-    active: false
-    ignoreOverridden: false
-    ignoreUsageInGenerics: false
   FunctionOnlyReturningConstant: { active: true }
   LoopWithTooManyJumpStatements:
     active: true
     maxJumpCount: 0
   MagicNumber: { active: false }
-  MandatoryBracesIfStatements: { active: true }
+  BracesOnIfStatements:
+    active: true
+    singleLine: 'never'
+    multiLine: 'always'
   MandatoryBracesLoops: { active: true }
-  MaxChainedCallsOnSameLine: { active: false } # <- Postponed: Requires Type Resolution
   MaxLineLength:
     active: true
     maxLineLength: 140
   MayBeConst: { active: true }
   ModifierOrder: { active: true }
-  MultilineLambdaItParameter: { active: false } # <- Postponed: Requires Type Resolution
   NestedClassesVisibility: { active: true }
   NewLineAtEndOfFile: { active: true }
   NoTabs: { active: true }
-  NullableBooleanCheck: { active: false } # <- Postponed: Requires Type Resolution
-  ObjectLiteralToLambda: { active: false } # <- Postponed: Requires Type Resolution
   OptionalAbstractKeyword: { active: true }
   OptionalUnit: { active: true }
-  OptionalWhenBraces: { active: false }
-  PreferToOverPairSyntax: { active: false } # <- Postponed: Requires Type Resolution
   ProtectedMemberInFinalClass: { active: true }
   RedundantExplicitType: { active: false }
-  RedundantHigherOrderMapUsage: { active: false } # <- Postponed: Requires Type Resolution
   RedundantVisibilityModifierRule: { active: true }
   ReturnCount: { active: false }
   SafeCast: { active: true }
@@ -278,43 +228,22 @@ style:
   UnderscoresInNumericLiterals: { active: true }
   UnnecessaryAbstractClass: { active: true }
   UnnecessaryAnnotationUseSiteTarget: { active: true }
-  UnnecessaryApply: { active: false } # <- Postponed: Requires Type Resolution
   UnnecessaryBackticks: { active: true }
-  UnnecessaryFilter: { active: false } # <- Postponed: Requires Type Resolution
   UnnecessaryInheritance: { active: true }
-  UnnecessaryInnerClass: { active: false } # <- Postponed: Requires Type Resolution
-  UnnecessaryLet: { active: false } # <- Postponed: Requires Type Resolution
-  UnnecessaryParentheses: { active: false } # <- Postponed: Maybe enable later
+  UnnecessaryParentheses: { active: true }
   UntilInsteadOfRangeTo: { active: true }
   UnusedImports: { active: true }
   UnusedPrivateClass: { active: true }
   UnusedPrivateMember:
     active: true
-    allowedNames: '(_|ignored|expected|serialVersionUID|LOG_TAG)'
-    ignoreAnnotated: [
-      'Preview',
-      'StocardSmallPreview',
-      'StocardSmallPreviews',
-      'StocardMediumPreview',
-      'StocardMediumPreviews',
-      'StocardSpecialPreview',
-      'StocardSpecialPreviews',
-      'StocardSizesPreview',
-      'StocardAllPreviews'
-    ]
-  UseAnyOrNoneInsteadOfFind: { active: false } # <- Postponed: Requires Type Resolution
+    allowedNames: ''
+    ignoreAnnotated: [ 'Preview' ]
   UseArrayLiteralsInAnnotations: { active: true }
   UseCheckNotNull: { active: false }
   UseCheckOrError: { active: false }
   UseDataClass: { active: false }
-  UseEmptyCounterpart: { active: false } # <- Postponed: Requires Type Resolution
-  UseIfEmptyOrIfBlank: { active: false } # <- Postponed: Requires Type Resolution
   UseIfInsteadOfWhen: { active: false }
-  UseIsNullOrEmpty: { active: false } # <- Postponed: Requires Type Resolution
-  UseOrEmpty: { active: false } # <- Postponed: Requires Type Resolution
   UseRequire: { active: false }
   UseRequireNotNull: { active: false }
-  UselessCallOnNotNull: { active: false } # <- Postponed: Requires Type Resolution
   UtilityClassWithPublicConstructor: { active: true }
-  VarCouldBeVal: { active: false } # <- Postponed: Requires Type Resolution
   WildcardImport: { active: true }
