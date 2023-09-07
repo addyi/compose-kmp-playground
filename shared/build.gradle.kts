@@ -1,8 +1,8 @@
 plugins {
-    alias(libs.plugins.com.android.library)
-    alias(libs.plugins.org.jetbrains.compose)
-    alias(libs.plugins.org.jetbrains.kotlin.multiplatform)
-    alias(libs.plugins.org.jetbrains.kotlin.plugin.serialization)
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.jetbrains.compose)
+    alias(libs.plugins.jetbrains.kotlin.multiplatform)
+    alias(libs.plugins.jetbrains.kotlin.plugin.serialization)
 }
 
 kotlin {
@@ -30,7 +30,7 @@ kotlin {
                 implementation(libs.ktor.client.core)
                 implementation(libs.ktor.client.serialization)
                 implementation(libs.ktor.serialization.json)
-                implementation(libs.org.jetbrains.kotlinx.datetime)
+                implementation(libs.jetbrains.kotlinx.datetime)
                 // TODO implementation(libs.coil.compose) Use when KMP is supported https://github.com/coil-kt/coil/issues/842#issuecomment-1622516075
                 implementation(libs.arrow.core)
             }
@@ -60,7 +60,7 @@ kotlin {
 }
 
 android {
-    compileSdk = libs.versions.android.compile.sdk.get().toInt()
+    compileSdk = libs.versions.android.sdk.compile.get().toInt()
     namespace = "com.myapplication.common"
 
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
@@ -68,15 +68,15 @@ android {
     sourceSets["main"].resources.srcDirs("src/commonMain/resources")
 
     defaultConfig {
-        minSdk = libs.versions.android.min.sdk.get().toInt()
+        minSdk = libs.versions.android.sdk.min.get().toInt()
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.toVersion(libs.versions.java.get())
-        targetCompatibility = JavaVersion.toVersion(libs.versions.java.get())
+        sourceCompatibility = JavaVersion.toVersion(libs.versions.java.jvm.get())
+        targetCompatibility = JavaVersion.toVersion(libs.versions.java.jvm.get())
     }
 
     kotlin {
-        jvmToolchain(libs.versions.java.get().toInt())
+        jvmToolchain(libs.versions.java.jvm.get().toInt())
     }
 }

@@ -6,13 +6,13 @@ plugins {
 
 kotlin {
     jvmToolchain {
-        this.languageVersion.set(JavaLanguageVersion.of(libs.versions.java.get()))
+        this.languageVersion.set(JavaLanguageVersion.of(libs.versions.java.jvm.get()))
     }
 }
 
 tasks.withType<KotlinCompile>().configureEach {
     kotlinOptions {
-        jvmTarget = libs.versions.java.get()
+        jvmTarget = libs.versions.java.jvm.get()
     }
 }
 

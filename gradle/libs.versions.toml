@@ -1,57 +1,34 @@
 [versions]
-
-android-target-sdk = "34"
-android-compile-sdk = "34"
-android-min-sdk = "24"
-
+android-gradle-plugin = "8.1.0"
+android-sdk-compile = "34"
+android-sdk-min = "24"
+android-sdk-target = "34"
+arrow = "1.2.0"
+java-jvm = "11"
 kotlin = "1.9.10"
-java = "11"
-agp = "8.1.0"
-compose = "1.5.1"
-
-compose_bom = "2023.08.00" # https://developer.android.com/jetpack/compose/bom/bom-mapping
-activity-compose = "1.7.2"
-appcompat = "1.6.1"
-core-ktx = "1.10.1"
-
 ktor = "2.1.3"
 
-kotlinx-datetime = "0.4.0"
-
-coil-compose = "2.4.0"
-
-arrow = "1.2.0"
-
 [libraries]
-androidx-compose-bom = { module = "androidx.compose:compose-bom", version.ref = "compose_bom" }
-androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activity-compose" }
-androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
-androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
-
-ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
-ktor-client-serialization = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
-ktor-serialization-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
-ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktor" }
-ktor-client-ios = { module = "io.ktor:ktor-client-ios", version.ref = "ktor" }
-
-org-jetbrains-kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
-
-coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil-compose" }
-
+androidx-activity-compose = "androidx.activity:activity-compose:1.7.2"
+androidx-appcompat = "androidx.appcompat:appcompat:1.6.1"
+androidx-core-ktx = "androidx.core:core-ktx:1.10.1"
 arrow-core = { module = "io.arrow-kt:arrow-core", version.ref = "arrow" }
 arrow-core-serialization = { module = "io.arrow-kt:arrow-core-serialization", version.ref = "arrow" }
 arrow-fx-coroutines = { module = "io.arrow-kt:arrow-fx-coroutines", version.ref = "arrow" }
+coil-compose = "io.coil-kt:coil-compose:2.4.0"
+jetbrains-kotlinx-datetime = "org.jetbrains.kotlinx:kotlinx-datetime:0.4.0"
+ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktor" }
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-client-ios = { module = "io.ktor:ktor-client-ios", version.ref = "ktor" }
+ktor-client-serialization = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-serialization-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
 plugin-version-management-ben-manes = "com.github.ben-manes:gradle-versions-plugin:0.48.0"
 plugin-version-management-version-catalog = "nl.littlerobots.vcu:plugin:0.8.1"
 
 [plugins]
-
-com-android-application = { id = "com.android.application", version.ref = "agp" }
-com-android-library = { id = "com.android.library", version.ref = "agp" }
-org-jetbrains-compose = { id = "org.jetbrains.compose", version.ref = "compose" }
-org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-org-jetbrains-kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
-org-jetbrains-kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
-
-[bundles]
-
+android-application = { id = "com.android.application", version.ref = "android-gradle-plugin" }
+android-library = { id = "com.android.library", version.ref = "android-gradle-plugin" }
+jetbrains-compose = "org.jetbrains.compose:1.5.1"
+jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+jetbrains-kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+jetbrains-kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
