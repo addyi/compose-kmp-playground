@@ -5,8 +5,10 @@ plugins {
     alias(libs.plugins.org.jetbrains.compose).apply(false)
     alias(libs.plugins.org.jetbrains.kotlin.multiplatform).apply(false)
     alias(libs.plugins.org.jetbrains.kotlin.plugin.serialization).apply(false)
+    id("dependency-version-management")
 }
 
 tasks.register("clean", Delete::class) {
     delete(rootProject.buildDir)
+    delete(rootProject.projectDir.resolve("buildSrc/build"))
 }
