@@ -7,6 +7,7 @@ arrow = "1.2.1"
 java-jvm = "11"
 kotlin = "1.9.10"
 ktor = "2.3.5"
+detekt="1.23.1"
 
 [libraries]
 androidx-activity-compose = "androidx.activity:activity-compose:1.8.0"
@@ -32,3 +33,5 @@ jetbrains-compose = "org.jetbrains.compose:1.5.3"
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 jetbrains-kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 jetbrains-kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+arturbosch-detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+

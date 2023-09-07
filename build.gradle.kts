@@ -5,7 +5,26 @@ plugins {
     alias(libs.plugins.jetbrains.compose).apply(false)
     alias(libs.plugins.jetbrains.kotlin.multiplatform).apply(false)
     alias(libs.plugins.jetbrains.kotlin.plugin.serialization).apply(false)
+    alias(libs.plugins.arturbosch.detekt)
     id("dependency-version-management")
+}
+
+detekt {
+    // Documentation: https://detekt.dev/gradle.html#options-for-detekt-configuration-closure
+
+    source = files("androidApp", "shared") // The directories where detekt looks for source files.
+
+    config = files("${rootProject.rootDir}/detekt.yml")
+
+    parallel = true // Builds the AST in parallel.
+
+//    ignoredBuildTypes = listOf("release") // Don't create tasks for the specified build types (e.g. "release")
+//    ignoredFlavors = listOf("production", "staging") // Don't create tasks for the specified build flavor (e.g. "production")
+//    ignoredVariants = listOf("productionRelease") // Don't create tasks for the specified build variants (e.g. "productionRelease")
+
+    basePath = projectDir.absolutePath
+
+    allRules = true // Turns on all the rules. Default: false
 }
 
 tasks.register("clean", Delete::class) {
