@@ -32,8 +32,8 @@ jobs:
           restore-keys: |
             mkdocs-material-
 
-      - name: Install MkDocs Material
-        run: pip install mkdocs-material
+      - name: Install MkDocs Material & dependencies
+        run: pip install mkdocs-material pillow cairosvg
 
       - name: Build & deploy GH page
         run: mkdocs gh-deploy --force
