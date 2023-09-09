@@ -1,4 +1,7 @@
-# Continuous Integration with GitHub Actions[^1]
+# Continuous Integration
+
+!!! info
+    AI generated based on my input
 
 Continuous Integration (CI) is a practice that involves developers integrating code into a shared repository several times a day. Each
 integration is then verified by an automated build and automated tests. This approach allows teams to detect problems early and solve them
