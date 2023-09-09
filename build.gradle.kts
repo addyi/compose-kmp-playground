@@ -11,4 +11,8 @@ plugins {
 tasks.register("clean", Delete::class) {
     delete(rootProject.buildDir)
     delete(rootProject.projectDir.resolve("buildSrc/build"))
+    delete(rootProject.projectDir.resolve("iosApp/iosApp.xcworkspace"))
+    delete(rootProject.projectDir.resolve("iosApp/Pods"))
+    delete(rootProject.projectDir.resolve("iosApp/iosApp.xcodeproj/project.xcworkspace"))
+    delete(rootProject.projectDir.resolve("iosApp/iosApp.xcodeproj/xcuserdata"))
 }
