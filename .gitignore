@@ -1,12 +1,39 @@
-*.iml
-.gradle
-/local.properties
-/.idea
-.DS_Store
+### Gradle files ###
+.gradle/
 build/
+local.properties
+
+### IntelliJ / Android Studio ###
+*.iml
+.idea/
+
+### Android ###
 /captures
 .externalNativeBuild
 .cxx
+*.log
+
+### Xcode ###
 iosApp/iosApp.xcworkspace/*
 iosApp/iosApp.xcodeproj/*
 !iosApp/iosApp.xcodeproj/project.pbxproj
+
+### MkDocs with Material ###
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+site/
+.cache
+
+### OS-specific files ###
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
