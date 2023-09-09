@@ -48,5 +48,3 @@ In the above snippet, the workflow will only run when changes are pushed to the 
 - [act][act] is a tool that can be used to test GitHub Actions workflows locally before pushing changes to GitHub.
 
 [act]: https://github.com/nektos/act
-
-[^1]: AI generated based on my input

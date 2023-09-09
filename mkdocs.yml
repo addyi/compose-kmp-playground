@@ -1,5 +1,5 @@
 site_name: Compose KMP Playground
-#site_url: https://addyi.github.io/compose-kmp-playground/
+site_url: https://addyi.github.io/compose-kmp-playground/
 theme:
   name: material
   features:
