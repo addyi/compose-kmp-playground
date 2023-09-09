@@ -16,3 +16,9 @@ tasks.register("clean", Delete::class) {
     delete(rootProject.projectDir.resolve("iosApp/iosApp.xcodeproj/project.xcworkspace"))
     delete(rootProject.projectDir.resolve("iosApp/iosApp.xcodeproj/xcuserdata"))
 }
+
+dependencyLocking {
+    lockAllConfigurations()
+    lockMode.set(LockMode.STRICT)
+    lockFile.set(rootProject.file("gradle/dependency-locks/${project.name}.gradle.lockfile"))
+}

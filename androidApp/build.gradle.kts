@@ -39,3 +39,9 @@ android {
         jvmToolchain(libs.versions.java.jvm.get().toInt())
     }
 }
+
+dependencyLocking {
+    lockAllConfigurations()
+    lockMode.set(LockMode.STRICT)
+    lockFile.set(rootProject.file("gradle/dependency-locks/${project.name}.gradle.lockfile"))
+}
