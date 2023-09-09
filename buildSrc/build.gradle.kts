@@ -20,3 +20,9 @@ dependencies {
     implementation(libs.plugin.version.management.version.catalog)
     implementation(libs.plugin.version.management.ben.manes)
 }
+
+dependencyLocking {
+    lockAllConfigurations()
+    lockMode.set(LockMode.STRICT)
+    lockFile.set(rootProject.file("gradle/dependency-locks/${project.name}.gradle.lockfile"))
+}
