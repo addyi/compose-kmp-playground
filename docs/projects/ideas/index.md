@@ -24,9 +24,14 @@ hide: [toc]
 
 ## Additional Ideas and Plans
 
-* Check out Coil after its KMP support is [ready](https://github.com/coil-kt/coil/issues/842#issuecomment-1622516075). They've gotten a
+- Check out Coil after its KMP support is [ready](https://github.com/coil-kt/coil/issues/842#issuecomment-1622516075). They've gotten a
   grand to implement coil for KMP: https://kotlinfoundation.org/news/grants-program-winners-23/. So far it seems they are the best contender
   for a KMP image loading library so far.
-* Mental Arithmetic Trainer similar to [Math Workout Pro](https://play.google.com/store/apps/details?id=io.pro.mathworkout)
-* Add KMP desktop see <https://youtu.be/HpfFu2nl32s?t=1850>
-* Count down timer that helps to thoroughly chew food
+- Mental Arithmetic Trainer similar to [Math Workout Pro](https://play.google.com/store/apps/details?id=io.pro.mathworkout)
+- Add KMP desktop
+    - see <https://youtu.be/HpfFu2nl32s?t=1850>
+    - > If you want to create an application targeting desktop platforms – Windows, macOS, or Linux – use
+      the [Compose Multiplatform desktop application template][composeDesktop].
+- Count down timer that helps to thoroughly chew food
+
+[composeDesktop]: https://github.com/JetBrains/compose-multiplatform-desktop-template#readme

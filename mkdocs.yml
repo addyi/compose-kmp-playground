@@ -67,7 +67,11 @@ markdown_extensions:
 nav:
   - Home: index.md
 
-  - Getting Started: setup.md
+  - Getting Started:
+      - Environment Setup: setup/setup.md
+      - Project Structure: setup/structure.md
+      - Running the App: setup/running.md
+      - iOS Configuration: setup/ios-config.md
 
   - Projects:
       - projects/index.md
