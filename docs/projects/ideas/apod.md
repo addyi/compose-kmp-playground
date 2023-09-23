@@ -1,7 +1,6 @@
 ---
 title: 'Astronomy Picture of the Day'
 description: 'Project goal: Implement a small app that fetches and displays the Astronomy Picture of the Day using a NASA API.'
-icon: simple/nasa
 hide: [toc]
 ---
 

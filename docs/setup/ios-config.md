@@ -1,7 +1,6 @@
 ---
 title: iOS Configuration
 description: How to configure the iOS application
-icon: material/apple-ios
 hide: [toc]
 ---
 

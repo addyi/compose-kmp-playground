@@ -1,7 +1,6 @@
 ---
 title: Environment Setup
 description: Prerequisites and setup for the development environment
-icon: material/package-down
 hide: [toc]
 ---
 

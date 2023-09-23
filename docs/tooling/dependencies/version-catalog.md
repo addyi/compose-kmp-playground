@@ -1,7 +1,6 @@
 ---
 title: Gradle Version Catalog
 description: Version centralization for dependencies with the Gradle version catalog.
-icon: simple/toml
 ---
 
 # Gradle Version Catalog

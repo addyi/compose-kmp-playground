@@ -1,7 +1,6 @@
 ---
 title: 'Limerick Generator with ChatGPT'
 description: 'Project goal: Generate limericks with ChatGPT.'
-icon: material/robot-love
 hide: [toc]
 ---
 

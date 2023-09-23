@@ -1,7 +1,6 @@
 ---
 title: 'Habit Tracking App'
 description: 'Project goal: Implement a small habit tracking app.'
-icon: material/list-status
 hide: [toc]
 ---
 

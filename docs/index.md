@@ -29,4 +29,4 @@ Let's code, learn, and have fun!
 
 Happy Hacking!
 
-[template]: (https://github.com/JetBrains/compose-multiplatform-ios-android-template)
+[template]: https://github.com/JetBrains/compose-multiplatform-ios-android-template

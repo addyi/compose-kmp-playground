@@ -1,7 +1,6 @@
 ---
 title: First changes
 description: Adding a text field to the Compose Multiplatform app
-icon: fontawesome/solid/person-running
 hide: [toc]
 ---
 

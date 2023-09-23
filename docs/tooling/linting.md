@@ -1,7 +1,6 @@
 ---
 title: Linting
 description: Linting with detekt and ktlint
-icon: material/broom
 ---
 
 # Linting

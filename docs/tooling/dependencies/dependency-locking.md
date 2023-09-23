@@ -1,7 +1,6 @@
 ---
 title: Gradle Dependency Locking
 description: Dependency locking for more control of dependency versions.
-icon: material/lock
 ---
 
 # Gradle Dependency Locking

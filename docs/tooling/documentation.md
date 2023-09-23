@@ -1,7 +1,6 @@
 ---
 title: Project Documentation
 description: Project documentation with MkDocs and Material theme
-icon: logo
 ---
 
 # Project Documentation

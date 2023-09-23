@@ -1,7 +1,6 @@
 ---
 title: 'GPS Speedometer App'
 description: 'Project goal: App that shows show the current speed, distance traveled, and maximum speed attained.'
-icon: material/space-station
 hide: [toc]
 ---
 

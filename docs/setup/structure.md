@@ -1,7 +1,6 @@
 ---
 title: Project Structure
 description: Project Structure including shared, androidApp and iosApp modules
-icon: material/file-tree
 hide: [toc]
 ---
 

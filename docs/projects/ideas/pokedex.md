@@ -1,7 +1,6 @@
 ---
 title: 'Pokédex App'
 description: 'Project goal: Implement a Pokédex.'
-icon: material/pokeball
 hide: [toc]
 ---
 

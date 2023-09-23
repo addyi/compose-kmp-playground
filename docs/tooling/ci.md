@@ -1,7 +1,6 @@
 ---
 title: Continuous Integration
 description: Continuous Integration with GitHub Actions
-icon: simple/githubactions
 ---
 
 # Continuous Integration
