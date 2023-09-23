@@ -37,6 +37,7 @@ repo_name: compose-kmp-playground
 
 plugins:
   - social
+  - search
 
 extra:
   social:
