@@ -1,0 +1,100 @@
+site_name: Compose KMP Playground
+site_url: https://addyi.github.io/compose-kmp-playground/
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.tracking
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+  language: en
+  icon:
+    logo: simple/jetpackcompose
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+      primary: white
+      accent: indigo
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+      primary: black
+      accent: indigo
+
+repo_url: https://github.com/addyi/compose-kmp-playground
+repo_name: compose-kmp-playground
+
+plugins:
+  - social
+  - search
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/addyi
+      name: GitHub Profile for addyi
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.arithmatex:
+      generic: true
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.mark
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+nav:
+  - Home: index.md
+
+  - Getting Started:
+      - Environment Setup: setup/setup.md
+      - Project Structure: setup/structure.md
+      - Running the App: setup/running.md
+      - iOS Configuration: setup/ios-config.md
+
+  - Projects:
+      - projects/index.md
+
+      - First changes: projects/tutorial.md
+
+      - Ideas:
+          - projects/ideas/index.md
+          - Astronomy Picture of the Day: projects/ideas/apod.md
+          - Habit Tracking: projects/ideas/habit.md
+          - Limerick Generator with ChatGPT: projects/ideas/limerick.md
+          - Pokédex: projects/ideas/pokedex.md
+          - GPS Speedometer: projects/ideas/speed.md
+
+  - Tooling:
+      - tooling/index.md
+
+      - Continues Integration: tooling/ci.md
+      - Project Documentation: tooling/documentation.md
+      - Linting: tooling/linting.md
+
+      - Dependency Management:
+          - tooling/dependencies/index.md
+
+          - Dependency Locking: tooling/dependencies/dependency-locking.md
+          - Version Catalog: tooling/dependencies/version-catalog.md
