@@ -1,7 +1,10 @@
-# Continuous Integration
+---
+title: Continuous Integration
+description: Continuous Integration with GitHub Actions
+icon: simple/githubactions
+---
 
-!!! info
-    AI generated based on my input
+# Continuous Integration
 
 Continuous Integration (CI) is a practice that involves developers integrating code into a shared repository several times a day. Each
 integration is then verified by an automated build and automated tests. This approach allows teams to detect problems early and solve them
@@ -30,8 +33,8 @@ increase productivity and reduce overhead managing multiple tools.
 
 ### Testing GitHub Actions
 
-- You don’t need to test or tweak your workflows in your main branch. You can modify your GitHub Actions to only be triggered on push events
-  for a specific branch.
+You don’t need to test or tweak your workflows in your main branch. You can modify your GitHub Actions to only be triggered on push events
+for a specific branch.
 
 ```yaml
 on:
@@ -42,9 +45,4 @@ on:
 
 In the above snippet, the workflow will only run when changes are pushed to the `test-actions` branch.
 
-- GitHub Actions has a `workflow_dispatch` event that lets you manually trigger workflows. You need to include this event to the action's
-  YAML file.
 
-- [act][act] is a tool that can be used to test GitHub Actions workflows locally before pushing changes to GitHub.
-
-[act]: https://github.com/nektos/act

@@ -1,4 +1,5 @@
-# Setup
+# Set up the environment
+
 
 - Operating System: macOS
 - brew

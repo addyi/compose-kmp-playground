@@ -3,9 +3,10 @@ site_url: https://addyi.github.io/compose-kmp-playground/
 theme:
   name: material
   features:
-    #- navigation.tabs
+    - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
-    #- toc.integrate
+    - navigation.indexes
     - navigation.top
     - navigation.tracking
     - search.suggest
@@ -16,6 +17,7 @@ theme:
   language: en
   icon:
     logo: simple/jetpackcompose
+    repo: fontawesome/brands/github
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -23,14 +25,14 @@ theme:
         icon: material/weather-night
         name: Switch to dark mode
       primary: white
-      accent: purple
+      accent: indigo
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
       primary: black
-      accent: purple
+      accent: indigo
 
 repo_url: https://github.com/addyi/compose-kmp-playground
 repo_name: compose-kmp-playground
@@ -41,7 +43,7 @@ plugins:
 
 extra:
   social:
-    - icon: fontawesome/brands/github-alt
+    - icon: fontawesome/brands/github
       link: https://github.com/addyi
       name: GitHub Profile for addyi
 
@@ -61,3 +63,32 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+
+nav:
+  - Home: index.md
+
+  - Getting Started: setup.md
+
+  - Projects:
+      - projects/index.md
+
+      - Ideas:
+          - projects/ideas/index.md
+          - Astronomy Picture of the Day: projects/ideas/apod.md
+          - Habit Tracking: projects/ideas/habit.md
+          - Limerick Generator with ChatGPT: projects/ideas/limerick.md
+          - Pokédex: projects/ideas/pokedex.md
+          - GPS Speedometer: projects/ideas/speed.md
+
+  - Tooling:
+      - tooling/index.md
+
+      - Continues Integration: tooling/ci.md
+      - Project Documentation: tooling/documentation.md
+      - Linting: tooling/linting.md
+
+      - Dependency Management:
+          - tooling/dependencies/index.md
+
+          - Dependency Locking: tooling/dependencies/dependency-locking.md
+          - Version Catalog: tooling/dependencies/version-catalog.md
