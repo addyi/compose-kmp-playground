@@ -76,6 +76,8 @@ nav:
   - Projects:
       - projects/index.md
 
+      - First changes: projects/tutorial.md
+
       - Ideas:
           - projects/ideas/index.md
           - Astronomy Picture of the Day: projects/ideas/apod.md
