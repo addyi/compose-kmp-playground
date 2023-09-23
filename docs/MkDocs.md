@@ -25,6 +25,7 @@ Set up a virtual environment install MkDocs Material theme and create a new proj
 ```shell
 python3 -m venv venv
 pip3 install mkdocs-material
+pip3 install pillow cairosvg
 mkdocs new .
 ```
 
