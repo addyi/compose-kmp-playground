@@ -1,4 +1,4 @@
-root = true # Searching for EditorConfig files is stopped when the topmost file (root=true) is detected.
+root = true
 
 [*]
 charset = utf-8
