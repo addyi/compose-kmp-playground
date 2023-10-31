@@ -19,6 +19,5 @@ tasks.register("clean", Delete::class) {
 
 dependencyLocking {
     lockAllConfigurations()
-    lockMode.set(LockMode.STRICT)
     lockFile.set(rootProject.file("gradle/dependency-locks/${project.name}.gradle.lockfile"))
 }

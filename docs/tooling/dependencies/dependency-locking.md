@@ -29,3 +29,9 @@ update.
 
 Please note that the generation of a `settings-gradle.lockfile` appears to be a bug. More information on this issue can be found
 here: [Gradle Issue #21101](https://github.com/gradle/gradle/issues/21101).
+
+## Strict mode
+
+Dependency locking strict mode doesn't work well with the automatic dependency version update plugin.
+The dependency version plugin can only check for newer versions of the dependencies if the dependency version is not locked. Therefore all
+lock files need to be removed, but if strict mode is enabled building without a present lockfile will fail.
