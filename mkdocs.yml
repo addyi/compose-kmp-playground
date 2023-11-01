@@ -69,6 +69,7 @@ nav:
 
   - Getting Started:
       - Environment Setup: setup/setup.md
+      - Environment Variables: setup/environment.md
       - Project Structure: setup/structure.md
       - Running the App: setup/running.md
       - iOS Configuration: setup/ios-config.md
@@ -93,6 +94,7 @@ nav:
       - Continues Integration: tooling/ci.md
       - Project Documentation: tooling/documentation.md
       - Linting: tooling/linting.md
+      - BuildConfig: tooling/buildconfig.md
 
       - Dependency Management:
           - tooling/dependencies/index.md
