@@ -9,6 +9,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.multiplatform).apply(false)
     alias(libs.plugins.jetbrains.kotlin.plugin.serialization).apply(false)
     alias(libs.plugins.detekt)
+    alias(libs.plugins.buildKonfig).apply(false)
     id("dependency-version-management")
 }
 

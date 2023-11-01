@@ -6,6 +6,7 @@ import arrow.core.right
 import io.github.addyi.playground.apod.domain.apod.ApodClient
 import io.github.addyi.playground.apod.domain.apod.ApodError
 import io.github.addyi.playground.apod.entities.Apod
+import io.github.addyi.playground.core.Config
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.request.get
@@ -23,12 +24,10 @@ class KtorApodClient(private val httpClient: HttpClient) : ApodClient {
             httpClient.get {
                 contentType(ContentType.Application.Json)
                 url {
-                    this.protocol = URLProtocol.HTTPS
-                    // FIXME: extract base url
-                    this.host = "api.nasa.gov"
-                    this.path("/planetary/apod")
-                    // FIXME: extract secret api key and inject it
-                    this.parameters.append("api_key", "DEMO_KEY")
+                    protocol = URLProtocol.HTTPS
+                    host = Config.apodHost
+                    path("/planetary/apod")
+                    parameters.append("api_key", Config.apodApiKey)
                 }
             }
         } catch (e: IOException) {
