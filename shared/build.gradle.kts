@@ -36,6 +36,8 @@ kotlin {
                 implementation(libs.jetbrains.kotlinx.datetime)
                 // TODO implementation(libs.coil.compose) Use when KMP is supported https://github.com/coil-kt/coil/issues/842#issuecomment-1622516075
                 implementation(libs.arrow.core)
+                implementation(libs.koin.core)
+                implementation(libs.koin.compose)
             }
         }
         val androidMain by getting {

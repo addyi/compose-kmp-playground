@@ -6,7 +6,7 @@ import arrow.core.right
 import io.github.addyi.playground.apod.domain.apod.ApodClient
 import io.github.addyi.playground.apod.domain.apod.ApodError
 import io.github.addyi.playground.apod.entities.Apod
-import io.github.addyi.playground.core.Config
+import io.github.addyi.playground.core.config.AppConfigService
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.request.get
@@ -17,7 +17,10 @@ import io.ktor.http.path
 import io.ktor.utils.io.errors.IOException
 import kotlinx.datetime.LocalDate
 
-class KtorApodClient(private val httpClient: HttpClient) : ApodClient {
+class KtorApodClient(
+    private val httpClient: HttpClient,
+    private val appConfigService: AppConfigService
+) : ApodClient {
 
     override suspend fun getApod(date: LocalDate?): Either<ApodError, Apod> {
         val response = try {
@@ -25,9 +28,9 @@ class KtorApodClient(private val httpClient: HttpClient) : ApodClient {
                 contentType(ContentType.Application.Json)
                 url {
                     protocol = URLProtocol.HTTPS
-                    host = Config.apodHost
+                    host = appConfigService.apodHost.value
                     path("/planetary/apod")
-                    parameters.append("api_key", Config.apodApiKey)
+                    parameters.append("api_key", appConfigService.apodApiKey.value)
                 }
             }
         } catch (e: IOException) {

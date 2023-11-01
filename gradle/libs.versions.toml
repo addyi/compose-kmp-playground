@@ -6,6 +6,7 @@ android-sdk-target = "34"
 arrow = "1.2.1"
 detekt = "1.23.3"
 java-jvm = "11"
+koin = "3.5.0"
 kotlin = "1.9.10"
 ktor = "2.3.5"
 
@@ -21,6 +22,9 @@ detekt-rules-compose-kode = "ru.kode:detekt-rules-compose:1.3.0"
 detekt-rules-compose-nlopez = "io.nlopez.compose.rules:detekt:0.3.0"
 detekt-rules-formatting-ktlint = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
 jetbrains-kotlinx-datetime = "org.jetbrains.kotlinx:kotlinx-datetime:0.4.0"
+koin-compose = "io.insert-koin:koin-compose:1.1.0"
+koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
+koin-test = { module = "io.insert-koin:koin-test", version.ref = "koin" }
 ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktor" }
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-client-ios = { module = "io.ktor:ktor-client-ios", version.ref = "ktor" }

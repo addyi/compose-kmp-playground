@@ -15,49 +15,58 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import io.github.addyi.playground.apod.data.apod.HttpClientFactory
-import io.github.addyi.playground.apod.data.apod.KtorApodClient
+import io.github.addyi.playground.apod.di.apodModule
+import io.github.addyi.playground.apod.domain.apod.ApodClient
+import io.github.addyi.playground.core.di.coreModule
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
+import org.koin.compose.KoinApplication
+import org.koin.compose.koinInject
 
 @OptIn(ExperimentalResourceApi::class)
 @Composable
 fun App() {
-    MaterialTheme {
-        val apodClient = KtorApodClient(HttpClientFactory().create())
-        var apodText by remember { mutableStateOf("") }
-
-        var greetingText by remember { mutableStateOf("Hello, World!") }
-        var showImage by remember { mutableStateOf(false) }
-
-        LaunchedEffect(true) {
-            apodText = apodClient.getApod(null).toString()
+    KoinApplication(
+        application = {
+            modules(listOf(coreModule, apodModule))
         }
+    ) {
+        MaterialTheme {
+            val apodClient = koinInject<ApodClient>()
+            var apodText by remember { mutableStateOf("") }
 
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .verticalScroll(rememberScrollState()),
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Button(
-                onClick = {
-                    greetingText = "Hello, ${getPlatformName()}"
-                    showImage = !showImage
-                },
-                content = { Text(greetingText) }
-            )
+            var greetingText by remember { mutableStateOf("Hello, World!") }
+            var showImage by remember { mutableStateOf(false) }
 
-            Text(
-                text = apodText,
+            LaunchedEffect(true) {
+                apodText = apodClient.getApod(null).toString()
+            }
+
+            Column(
                 modifier = Modifier
-            )
-
-            AnimatedVisibility(showImage) {
-                Image(
-                    painterResource("compose-multiplatform.xml"),
-                    null
+                    .fillMaxWidth()
+                    .verticalScroll(rememberScrollState()),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Button(
+                    onClick = {
+                        greetingText = "Hello, ${getPlatformName()}"
+                        showImage = !showImage
+                    },
+                    content = { Text(greetingText) }
                 )
+
+                Text(
+                    text = apodText,
+                    modifier = Modifier
+                )
+
+                AnimatedVisibility(showImage) {
+                    Image(
+                        painterResource("compose-multiplatform.xml"),
+                        null
+                    )
+                }
             }
         }
     }
