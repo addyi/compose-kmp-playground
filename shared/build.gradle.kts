@@ -38,6 +38,7 @@ kotlin {
                 implementation(libs.arrow.core)
                 implementation(libs.koin.core)
                 implementation(libs.koin.compose)
+                implementation(libs.bundles.voyager)
             }
         }
         val androidMain by getting {

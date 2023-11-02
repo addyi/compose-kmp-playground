@@ -9,6 +9,7 @@ java-jvm = "11"
 koin = "3.5.0"
 kotlin = "1.9.10"
 ktor = "2.3.5"
+voyager = "1.0.0-rc08"
 
 [libraries]
 androidx-activity-compose = "androidx.activity:activity-compose:1.8.0"
@@ -32,6 +33,11 @@ ktor-client-serialization = { module = "io.ktor:ktor-client-content-negotiation"
 ktor-serialization-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
 plugin-version-management-ben-manes = "com.github.ben-manes:gradle-versions-plugin:0.48.0"
 plugin-version-management-version-catalog = "nl.littlerobots.vcu:plugin:0.8.1"
+voyager-bottomSheetNavigator = { module = "cafe.adriel.voyager:voyager-bottom-sheet-navigator", version.ref = "voyager" }
+voyager-koin = { module = "cafe.adriel.voyager:voyager-koin", version.ref = "voyager" }
+voyager-navigator = { module = "cafe.adriel.voyager:voyager-navigator", version.ref = "voyager" }
+voyager-tabNavigator = { module = "cafe.adriel.voyager:voyager-tab-navigator", version.ref = "voyager" }
+voyager-transitions = { module = "cafe.adriel.voyager:voyager-transitions", version.ref = "voyager" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "android-gradle-plugin" }
@@ -42,3 +48,12 @@ jetbrains-compose = "org.jetbrains.compose:1.5.3"
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 jetbrains-kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 jetbrains-kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+
+[bundles]
+voyager = [
+    "voyager-bottomSheetNavigator",
+    "voyager-koin",
+    "voyager-navigator",
+    "voyager-tabNavigator",
+    "voyager-transitions",
+]
