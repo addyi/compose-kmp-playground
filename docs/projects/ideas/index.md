@@ -22,6 +22,9 @@ hide: [toc]
    measurement, and maximum speed. This project will involve using native Android and iOS APIs to access GPS data and to handle location
    permissions.
 
+6. [**Audio Guide**](audio-guide.md): The aim of this project is to develop an audio guide app suitable for various points of interest such
+   as museums, galleries, cities, and parks.
+
 ## Additional Ideas and Plans
 
 - Check out Coil after its KMP support is [ready](https://github.com/coil-kt/coil/issues/842#issuecomment-1622516075). They've gotten a

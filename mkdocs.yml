@@ -85,6 +85,7 @@ nav:
           - Limerick Generator with ChatGPT: projects/ideas/limerick.md
           - Pokédex: projects/ideas/pokedex.md
           - GPS Speedometer: projects/ideas/speed.md
+          - Audio Guide: projects/ideas/audio-guide.md
 
   - Tooling:
       - tooling/index.md
