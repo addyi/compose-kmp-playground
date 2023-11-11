@@ -1,3 +1,6 @@
+import io.gitlab.arturbosch.detekt.Detekt
+import io.gitlab.arturbosch.detekt.DetektCreateBaselineTask
+
 plugins {
     // this is necessary to avoid the plugins to be loaded multiple times in each subproject's classloader
     alias(libs.plugins.android.application).apply(false)
@@ -12,7 +15,7 @@ plugins {
 detekt {
     // Documentation: https://detekt.dev/docs/gettingstarted/gradle/#kotlin-dsl-3
 
-    source.setFrom(".", "androidApp", "shared") // The directories where detekt looks for source files.
+    source.setFrom(".") // The directories where detekt looks for source files.
 
     buildUponDefaultConfig = true // Applies the config files on top of detekt's default config file. `false` by default.
     config.setFrom("${rootProject.rootDir}/detekt.yml")
@@ -24,6 +27,16 @@ detekt {
     basePath = projectDir.absolutePath
 
     allRules = true // Turns on all the rules. Default: false
+}
+
+tasks.withType<Detekt>().configureEach {
+    // include("**/special/package/**") // only analyze a sub package inside src/main/kotlin
+    exclude("**/build/**") // but exclude our legacy internal package
+}
+
+tasks.withType<DetektCreateBaselineTask>().configureEach {
+    // include("**/special/package/**") // only analyze a sub package inside src/main/kotlin
+    exclude("**/build/**") // but exclude our legacy internal package
 }
 
 dependencies {

@@ -9,7 +9,6 @@
     <ID>FinalNewline:MainActivity.kt$com.myapplication.MainActivity.kt</ID>
     <ID>FinalNewline:main.ios.kt$.main.ios.kt</ID>
     <ID>FunctionNaming:main.ios.kt$fun MainViewController()</ID>
-    <ID>MaximumLineLength:build.gradle.kts$ </ID>
     <ID>MissingPackageDeclaration:App.kt$.App.kt</ID>
     <ID>MissingPackageDeclaration:main.android.kt$.main.android.kt</ID>
     <ID>MissingPackageDeclaration:main.ios.kt$.main.ios.kt</ID>
