@@ -4,6 +4,7 @@ android-sdk-compile = "34"
 android-sdk-min = "24"
 android-sdk-target = "34"
 arrow = "1.2.1"
+detekt = "1.23.3"
 java-jvm = "11"
 kotlin = "1.9.10"
 ktor = "2.3.5"
@@ -16,6 +17,9 @@ arrow-core = { module = "io.arrow-kt:arrow-core", version.ref = "arrow" }
 arrow-core-serialization = { module = "io.arrow-kt:arrow-core-serialization", version.ref = "arrow" }
 arrow-fx-coroutines = { module = "io.arrow-kt:arrow-fx-coroutines", version.ref = "arrow" }
 coil-compose = "io.coil-kt:coil-compose:2.4.0"
+detekt-rules-compose-kode = "ru.kode:detekt-rules-compose:1.3.0"
+detekt-rules-compose-nlopez = "io.nlopez.compose.rules:detekt:0.3.0"
+detekt-rules-formatting-ktlint = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
 jetbrains-kotlinx-datetime = "org.jetbrains.kotlinx:kotlinx-datetime:0.4.0"
 ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktor" }
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
@@ -28,6 +32,7 @@ plugin-version-management-version-catalog = "nl.littlerobots.vcu:plugin:0.8.1"
 [plugins]
 android-application = { id = "com.android.application", version.ref = "android-gradle-plugin" }
 android-library = { id = "com.android.library", version.ref = "android-gradle-plugin" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 jetbrains-compose = "org.jetbrains.compose:1.5.3"
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 jetbrains-kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }

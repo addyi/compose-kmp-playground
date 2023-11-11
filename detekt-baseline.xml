@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <CurrentIssues>
+    <ID>ComposableFunctionName:main.android.kt$@Composable fun MainView()</ID>
+    <ID>Filename:main.android.kt$.main.android.kt</ID>
+    <ID>Filename:main.ios.kt$.main.ios.kt</ID>
+    <ID>FinalNewline:App.kt$.App.kt</ID>
+    <ID>FinalNewline:MainActivity.kt$com.myapplication.MainActivity.kt</ID>
+    <ID>FinalNewline:main.ios.kt$.main.ios.kt</ID>
+    <ID>FunctionNaming:main.ios.kt$fun MainViewController()</ID>
+    <ID>MissingPackageDeclaration:App.kt$.App.kt</ID>
+    <ID>MissingPackageDeclaration:main.android.kt$.main.android.kt</ID>
+    <ID>MissingPackageDeclaration:main.ios.kt$.main.ios.kt</ID>
+    <ID>ModifierMissing:App.kt$App</ID>
+    <ID>NewLineAtEndOfFile:App.kt$.App.kt</ID>
+    <ID>NewLineAtEndOfFile:MainActivity.kt$com.myapplication.MainActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:main.ios.kt$.main.ios.kt</ID>
+    <ID>UnusedPrivateProperty:build.gradle.kts$val androidMain by getting { dependencies { api(libs.androidx.activity.compose) api(libs.androidx.appcompat) api(libs.androidx.core.ktx) api(libs.ktor.client.android) } }</ID>
+    <ID>UnusedPrivateProperty:build.gradle.kts$val androidMain by getting { dependencies { implementation(project(":shared")) } }</ID>
+    <ID>UnusedPrivateProperty:build.gradle.kts$val iosMain by creating { dependsOn(commonMain) iosX64Main.dependsOn(this) iosArm64Main.dependsOn(this) iosSimulatorArm64Main.dependsOn(this) dependencies { implementation(libs.ktor.client.ios) } }</ID>
+  </CurrentIssues>
+</SmellBaseline>
