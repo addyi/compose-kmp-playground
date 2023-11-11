@@ -1,8 +1,11 @@
+import com.codingfeline.buildkonfig.compiler.FieldSpec.Type.STRING
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.compose)
     alias(libs.plugins.jetbrains.kotlin.multiplatform)
     alias(libs.plugins.jetbrains.kotlin.plugin.serialization)
+    alias(libs.plugins.buildKonfig)
 }
 
 kotlin {
@@ -33,6 +36,9 @@ kotlin {
                 implementation(libs.jetbrains.kotlinx.datetime)
                 // TODO implementation(libs.coil.compose) Use when KMP is supported https://github.com/coil-kt/coil/issues/842#issuecomment-1622516075
                 implementation(libs.arrow.core)
+                implementation(libs.koin.core)
+                implementation(libs.koin.compose)
+                implementation(libs.bundles.voyager)
             }
         }
         val androidMain by getting {
@@ -78,6 +84,19 @@ android {
 
     kotlin {
         jvmToolchain(libs.versions.java.jvm.get().toInt())
+    }
+}
+
+buildkonfig {
+    packageName = "io.github.addyi.playground"
+
+    val apodApiKey = System.getenv("APOD_API_KEY")
+        ?: extra.properties.getOrDefault("apodApiKey", null) as? String
+        ?: throw GradleException("Please define your APOD API KEY as described in README")
+
+    defaultConfigs {
+        buildConfigField(STRING, "apodHost", "api.nasa.gov")
+        buildConfigField(STRING, "apodApiKey", apodApiKey)
     }
 }
 

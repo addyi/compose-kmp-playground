@@ -1,9 +1,9 @@
 package com.myapplication
 
-import MainView
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
+import io.github.addyi.playground.core.ui.MainView
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
