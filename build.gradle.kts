@@ -5,7 +5,7 @@ plugins {
     alias(libs.plugins.jetbrains.compose).apply(false)
     alias(libs.plugins.jetbrains.kotlin.multiplatform).apply(false)
     alias(libs.plugins.jetbrains.kotlin.plugin.serialization).apply(false)
-    alias(libs.plugins.arturbosch.detekt)
+    alias(libs.plugins.detekt)
     id("dependency-version-management")
 }
 
