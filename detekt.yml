@@ -138,6 +138,7 @@ complexity:
     ignoreAnnotatedParameter: [ ]
     ignoreAnnotated:
       - 'kotlinx.serialization.Serializable'
+      - 'Composable'
   MethodOverloading:
     active: true
     threshold: 6
@@ -807,7 +808,7 @@ compose:
   MissingModifierDefaultValue:
     active: true
   TopLevelComposableFunctions:
-    active: true
+    active: false
   ComposableFunctionName:
     active: true
   ConditionCouldBeLifted:

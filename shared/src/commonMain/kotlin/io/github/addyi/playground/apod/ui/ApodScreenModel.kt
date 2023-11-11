@@ -1,9 +1,14 @@
 package io.github.addyi.playground.apod.ui
 
-import arrow.core.Either
 import cafe.adriel.voyager.core.model.StateScreenModel
 import cafe.adriel.voyager.core.model.screenModelScope
 import io.github.addyi.playground.apod.domain.apod.ApodClient
+import io.github.addyi.playground.apod.domain.apod.ApodError
+import io.github.addyi.playground.apod.entities.Apod
+import io.github.addyi.playground.apod.entities.MediaType
+import io.github.addyi.playground.apod.ui.ApodScreenState.Error
+import io.github.addyi.playground.apod.ui.ApodScreenState.Success
+import io.github.addyi.playground.apod.ui.ApodScreenState.Success.ApodImage
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -17,15 +22,33 @@ class ApodScreenModel(
 
             delay(5000) // fixme remove again
 
-            mutableState.value = when (val apod = apodClient.getApod(null)) {
-                is Either.Left -> ApodScreenState.Error(apod.value.toString())
-                is Either.Right -> ApodScreenState.Success("${apod.value.date} = ${apod.value.title.title}")
-            }
+            mutableState.value = apodClient.getApod(null).fold<ApodScreenState>(
+                ifLeft = { error: ApodError -> error.toScreenState() },
+                ifRight = { apod: Apod -> apod.toScreenState() }
+            )
         }
     }
 
-    override fun onDispose() {
-        // TODO: dispose
-        super.onDispose()
+    private fun Apod.toScreenState(): Success {
+        return when (apod) {
+            is MediaType.Image -> ApodImage(
+                title = this.title,
+                description = description,
+                apod = apod,
+                date = date,
+                copyrightOwner = copyrightOwner
+            )
+
+            is MediaType.Video -> TODO() // fixme implement video
+        }
+    }
+
+    private fun ApodError.toScreenState(): Error {
+        return when (this) {
+            is ApodError.Client -> Error(this.message)
+            is ApodError.Network -> Error(this.message)
+            is ApodError.Server -> Error(this.message)
+            is ApodError.Unknown -> Error(this.message)
+        }
     }
 }

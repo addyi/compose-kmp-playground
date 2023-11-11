@@ -17,13 +17,13 @@ sealed class MediaType {
 }
 
 @JvmInline
-value class Url(val url: String)
+value class Url(val value: String)
 
 @JvmInline
-value class Title(val title: String)
+value class Title(val value: String)
 
 @JvmInline
-value class Description(val description: String)
+value class Description(val value: String)
 
 @JvmInline
-value class CopyrightOwner(val copyright: String)
+value class CopyrightOwner(val value: String)
