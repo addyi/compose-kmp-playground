@@ -5,8 +5,15 @@ description: Linting with detekt and ktlint
 
 # Linting
 
-:construction: Plan is to set up a [detekt](https://detekt.dev/) and [ktlint](https://github.com/JLLeitschuh/ktlint-gradle) integration with
-gradle.
+Adding linting to a code project, with tools like Detekt for Kotlin, is crucial for ensuring consistent coding styles, improving code
+quality, and catching potential bugs early in the development process. Linting promotes collaboration within development teams by enforcing
+uniform coding conventions, enhancing code readability, and automating the identification of common issues during code reviews. Detekt,
+being Kotlin-specific, allows for customizable rules tailored to a project's needs, ensuring adherence to best practices and Kotlin-specific
+coding conventions. This leads to increased productivity, seamless integration into CI/CD pipelines, and ultimately results in more
+maintainable and reliable Kotlin projects.
+
+:construction: Plan is to set up a [detekt](https://detekt.dev/) (done) and [ktlint](https://github.com/JLLeitschuh/ktlint-gradle) (todo)
+integration with gradle.
 
 ## Detekt
 
@@ -33,7 +40,8 @@ More information about updating detekt can be found in the blog post: [Recipe: d
 ### Running detekt during compile time
 
 > You can integrate detekt in your project using the Detekt **Compiler** Plugin instead of the classic Detekt Gradle Plugin. Detekt offers a
-> compiler plugin for K1 which allows you to run detekt as part of the Kotlin compilation process. This allows you to run detekt on your code
+> compiler plugin for K1 which allows you to run detekt as part of the Kotlin compilation process. This allows you to run detekt on your
+> code
 > without having separate tasks to invoke and results in much faster execution of detekt, especially if you're using type resolution.
 
 Source: https://detekt.dev/docs/gettingstarted/compilerplugin
