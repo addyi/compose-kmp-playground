@@ -37,11 +37,10 @@ More information about updating detekt can be found in the blog post: [Recipe: d
 
 [detektDiff]: https://detekt.dev/blog/2020/09/27/additional-diff-config-task/
 
-### Running detekt during compile time
+### Plugins
 
-> You can integrate detekt in your project using the Detekt **Compiler** Plugin instead of the classic Detekt Gradle Plugin. Detekt offers a
-> compiler plugin for K1 which allows you to run detekt as part of the Kotlin compilation process. This allows you to run detekt on your
-> code
-> without having separate tasks to invoke and results in much faster execution of detekt, especially if you're using type resolution.
+Detekt has a plugin system to extend detekt with additional rulesets. The following plugins are currently used:
 
-Source: https://detekt.dev/docs/gettingstarted/compilerplugin
+- <https://github.com/appKODE/detekt-rules-compose>
+- <https://mrmans0n.github.io/compose-rules/>
+- <https://detekt.dev/docs/next/rules/formatting/>
